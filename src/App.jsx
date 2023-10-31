@@ -3,9 +3,9 @@ import CartProvider from "./store/CartProvider";
 
 function App() {
   return (
-    <CartProvider>
+    // <CartProvider>
       <Meals />
-    </CartProvider>
+    // </CartProvider>
   );
 }
 

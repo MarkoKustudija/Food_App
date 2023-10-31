@@ -28,18 +28,29 @@ const dummy_meals = [
 ];
 
 function AvailableMeals() {
-
-  const [meals, setMeals]= useState([]);
+  const [meals, setMeals] = useState([]);
 
   useEffect(() => {
-     setMeals(dummy_meals);
+    async function fetchMeals() {
+      try {
+        const response = await fetch("http://localhost:3000/meals");
+        if (!response.ok) {
+          throw new Error("Something went wrong...");
+        }
+
+        const meals = await response.json();
+        setMeals(meals);
+        console.log(meals);
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+    fetchMeals();
   }, []);
 
-  console.log(meals);
-  
   return (
     <>
-      <ul>
+      <ul id="meals">
         {meals.map((meal, index) => (
           <li key={meal.id}>{meal.name}</li>
         ))}

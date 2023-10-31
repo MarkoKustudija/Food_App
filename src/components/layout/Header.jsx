@@ -1,4 +1,5 @@
 import logoImg from "../../assets/logo.jpg";
+import Button from "../UI/Button";
 
 function Header() {
   const openCart = () => {};
@@ -10,7 +11,7 @@ function Header() {
         <h1>ReactFood</h1>
       </div>
       <nav>
-        <button onClick={openCart}> Cart (0) </button>
+        <Button onClick={openCart}> Cart (0) </Button>
       </nav>
     </header>
   );

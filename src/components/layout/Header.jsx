@@ -11,7 +11,7 @@ function Header() {
         <h1>ReactFood</h1>
       </div>
       <nav>
-        <Button onClick={openCart}> Cart (0) </Button>
+        <Button textOnly onClick={openCart}> Cart (0) </Button>
       </nav>
     </header>
   );

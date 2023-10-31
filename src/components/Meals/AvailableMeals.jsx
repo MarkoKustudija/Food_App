@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Mealtem from "./MealItem/Mealtem";
 
 const dummy_meals = [
   {
@@ -40,7 +41,6 @@ function AvailableMeals() {
 
         const meals = await response.json();
         setMeals(meals);
-        console.log(meals);
       } catch (error) {
         console.log(error.message);
       }
@@ -51,8 +51,8 @@ function AvailableMeals() {
   return (
     <>
       <ul id="meals">
-        {meals.map((meal, index) => (
-          <li key={meal.id}>{meal.name}</li>
+        {meals.map((meal) => (
+          <Mealtem key={meal.id} meal={meal} />
         ))}
       </ul>
     </>

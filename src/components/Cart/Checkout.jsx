@@ -17,10 +17,10 @@ function Checkout() {
 
   const handleClose = () => {
     userProgressCtx.hideCheckout();
-  }
+  };
 
   return (
-    <Modal open={userProgressCtx.hideCart === "checkout"}>
+    <Modal open={userProgressCtx.progress === "checkout"} onClose = {handleClose}>
       <form>
         <h2>Checkout</h2>
         <p>Total Amount: {currencyFormatter.format(cartTotal)}</p>
@@ -32,7 +32,7 @@ function Checkout() {
           <Input label="City" type="text" id="city" />
         </div>
         <p className="modal-actions">
-          <Button onClick = {handleClose} type="button" textOnly>
+          <Button onClick={handleClose} type="button" textOnly>
             Close
           </Button>
           <Button>Submit Order</Button>

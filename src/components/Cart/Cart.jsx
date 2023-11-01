@@ -5,6 +5,7 @@ import { currencyFormatter } from "../../util/formatting";
 import Button from "../UI/Button";
 import UserProgressContex from "../../store/UserProgressContex";
 import CartItem from "./CartItem";
+import Checkout from "./Checkout";
 
 function Cart() {
   const userProgressCtx = useContext(UserProgressContex);
@@ -18,6 +19,10 @@ function Cart() {
   const handleCloseCart = () => {
     userProgressCtx.hideCart();
   };
+
+  const handleCheckout = () => {
+    return  <Checkout />
+  }
 
   return (
     <Modal className="cart" open={userProgressCtx.progress === "cart"}>
@@ -41,7 +46,7 @@ function Cart() {
           Close
         </Button>
         {cartCtx.items.length > 0 && (
-          <Button onClick={handleCloseCart}>Go to Checkout</Button>
+          <Button onClick={handleCheckout}>Go to Checkout</Button>
         )}
       </p>
     </Modal>

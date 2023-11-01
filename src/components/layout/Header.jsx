@@ -2,17 +2,21 @@ import { useContext } from "react";
 import logoImg from "../../assets/logo.jpg";
 import Button from "../UI/Button";
 import CartContext from "../../store/cart-context";
+import UserProgressContex from "../../store/UserProgressContex";
 
 function Header() {
 
   const cartCtx = useContext(CartContext);
+  const userProgressCtx = useContext(UserProgressContex);
 
   const totalCartItems = cartCtx.items.reduce((totalNumberOfItems, item) => {
     return totalNumberOfItems + item.quantity
   }, 0)
 
+  function handleShowCart() {
+    userProgressCtx.showCart();
+  }
 
-  const openCart = () => {};
 
   return (
     <header id="main-header">
@@ -21,7 +25,7 @@ function Header() {
         <h1>React Food</h1>
       </div>
       <nav>
-        <Button textOnly onClick={openCart}> Cart ({totalCartItems}) </Button>
+        <Button textOnly onClick = {handleShowCart}> Cart ({totalCartItems}) </Button>
       </nav>
     </header>
   );

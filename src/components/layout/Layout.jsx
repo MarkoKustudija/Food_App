@@ -1,14 +1,14 @@
-import React from 'react'
-import Header from './Header'
-import CartProvider from '../../store/CartProvider'
+import React from "react";
+import Header from "./Header";
 
-function Layout({children}) {
+function Layout({ children }) {
   return (
-    <CartProvider>
-    <Header />
-    <main>{children}</main>
-    </CartProvider>
-  )
+    <>
+      <Header />
+      <main>{children}</main>
+    </>
+
+  );
 }
 
-export default Layout
+export default Layout;

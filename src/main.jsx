@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 
 import App from "./App.jsx";
 import "./index.css";
-import Layout from "./components/layout/Layout.jsx";
+// import Layout from "./components/layout/Layout.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Layout>
+    {/* <Layout> */}
       <App />
-    </Layout>
+    {/* </Layout> */}
   </React.StrictMode>
 );
